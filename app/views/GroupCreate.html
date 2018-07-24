@@ -1,0 +1,54 @@
+<!--script src="services.js"></script-->
+
+<!--script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script-->
+<!-- </head> -->
+<div ng-include="'views/tab-align.html'"></div>
+<div class="center" ng-controller="ChatGroupCntl">
+    <div class="container">
+        <div id="signup">
+            <div class="signup-screen">
+                <div class="space-bot text-center">
+                    <h1>Create New Chat Group</h1>
+                    <!--<h2 ng-hide="status === 202">Join Community</h2>-->
+                    <!--<h2 ng-if="status === 202">Sign Up</h2>-->
+                    <div class="divider"></div>
+                </div>
+                <form class="form-register" method="post" name="register" novalidate ng-model="userForm">
+                    <div class="input-field col s6">
+                        <input id="GroupName" name="GroupName" type="text" class="validate" ng-model="GroupName"
+                               placeholder="Group Name" required>
+                    </div>
+                    <p class="error" ng-if=" status === 201"> Group already exists</p>
+                    <div class="input-field col s6">
+                        <input id="description" type="description" name="description" ng-model="description"
+                               placeholder="Description" required>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="user1" type="user1" name="user1" ng-model="user1"
+                               placeholder="user name" required>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="user2" type="user2" name="user2" ng-model="user2"
+                               placeholder="user name" required>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="user3" type="user3" name="user3" ng-model="user3"
+                               placeholder="user name" required>
+                    </div>
+                    <p class="error" ng-if=" status === 202"> User not Exist</p>
+                    <div class="space-top text-center">
+                        <button class="waves-effect waves-light btn done" ng-style=sendstyle
+                                ng-click="createGroup(GroupName,description,user1,user2,user3)">
+                            <i class="material-icons left"></i>Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+<!-- <ng-view></ng-view> -->

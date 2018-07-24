@@ -1,0 +1,67 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="DirectoryCntl">
+    <div class="tab-container">
+        <div class="jumbotron">
+            <div class="bar">
+                <!--SearchString Bind -->
+                <input type="text" ng-model="searchText" placeholder="Search User or Status:ok,help,emergency"/>
+            </div>
+
+            <h4 class="sub-header">User List</h4>
+            <div class="jumbotron" ng-show="administering">
+                <div class="form-group">
+                    <label>Account Status:</label>
+                    <select class="form-control" ng-model="userBeingAdministered.account_status">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                    <label>Privilege Level</label>
+                    <select class="form-control" ng-model="userBeingAdministered.privilege_level">
+                        <option>Citizen</option>
+                        <option>Coordinator</option>
+                        <option>Administrator</option>
+                    </select>
+                    <label>Username:</label>
+                    <input type="text" class="form-control" ng-model="userBeingAdministered.username">
+                    {{usernameAlert}}<br>
+                    <label>Password:</label>
+                    <input type="text" class="form-control" ng-model="userBeingAdministered.password">
+                    {{passwordAlert}}<br>
+                </div>
+                <button class="btn btn-default" ng-click="finishAdminister()">Submit</button>
+            </div>
+            <div class="scroll-table">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Availability</th>
+                        <th ng-show="mydata.privilege_level=='Administrator'">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in users | filter:searchText">
+                        <td ng-show="user.account_status=='Active' || mydata.privilege_level=='Administrator'"
+                            ng-click="chatWith(user.username)"><a href="#privateChat">{{user.username}} <span
+                                style="color: red;">{{newmsg(user.username) ? "new message" : ""}}</span></a>
+                            <img src="../public/img/emergency.png" class="show-icon" ng-show="user.status === 'emer'"/>
+                            <img src="../public/img/ok.png" class="show-icon" ng-show="user.status === 'ok'"/>
+                            <img src="../public/img/help.png" class="show-icon" ng-show="user.status === 'help'"/>
+                            <span class="date" ng-show="user.status != 'undef'">{{user.status_timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+                        </td>
+                        <td ng-show="user.account_status=='Active' || mydata.privilege_level=='Administrator'">
+                            {{user.online === true ? "online" : "offline"}}
+                        </td>
+                        <td ng-show="mydata.privilege_level=='Administrator' && user.username !== 'ESNAdmin'">
+                            <button class="btn btn-default" ng-click="startAdminister(user)" id="adminCriteria-btn">
+                                Administer
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

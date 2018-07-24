@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+.failed {color: red; background-color: #ffcccc;}
+.passed {color: green; background-color: #ccffcc;}
+.done {color: #404040; background-color: #ccffcc;}
+.comment {color: #404040; background-color: #d0d0d0;}
+body, table { font-family: Verdana, Arial, sans-serif; font-size: 12pt; }
+table { border-collapse: collapse; border: 1px solid #ccc; }
+th, td { padding-left: 0.3em; padding-right: 0.3em; border: 1px solid #ccc; }
+#suiteSummaryTable thead { font-size: 14pt; font-weight: 800; }
+.test_case thead { font-size: 14pt; font-weight: 400; }
+</style>
+</head>
+<body>
+<table id="suiteSummaryTable" class="selenium">
+<thead><tr class="passed"><td>Test Suite: ChatPrivately</td></tr></thead>
+<tbody>
+<tr><td>Test cases: 3 total / <span class="passed">3</span> passed / <span class="failed">0</span> failed</td></tr>
+<tr><td>Commands: 42 total / <span class="passed">42</span> passed / <span class="failed">0</span> failed / <span class="skipped">0</span> skipped</td></tr>
+</tbody></table><br>
+<table id="suiteTable" class="selenium">
+<thead><tr><td>Index of test cases</td></tr></thead>
+<tbody>
+<tr class="passed"><td><a href="#test0">test Hello</a></td></tr>
+<tr class="passed"><td><a href="#test1">test world</a></td></tr>
+<tr class="passed"><td><a href="#test2">test null</a></td></tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test0"></a><table class="test_case"><thead><tr><td colspan="4">Test case: test Hello</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td>Unknown command: 'openWin'</td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>111111</td>
+	<td>Element id=firstname not found</td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>1111</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1111</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertLocation</td>
+	<td>https://emergency-social-network.herokuapp.com/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>11111</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[5]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Private Chat</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Directory</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=1111</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>hello</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>world</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>hello</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//hidden/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertLocation</td>
+	<td>https://emergency-social-network.herokuapp.com/#/privateChat</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertTextPresent</td>
+	<td>hello</td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test1"></a><table class="test_case"><thead><tr><td colspan="4">Test case: test world</td></tr></thead><tbody><tr class="done">
+	<td>click</td>
+	<td>link=Private Chat</td>
+	<td></td>
+	<td>Element link=Private Chat not found</td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Directory</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=1111</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>hello</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>world</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td>Current window or frame is closed!</td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//hidden/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertLocation</td>
+	<td>https://emergency-social-network.herokuapp.com/#/privateChat</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertTextPresent</td>
+	<td>world</td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test2"></a><table class="test_case"><thead><tr><td colspan="4">Test case: test null</td></tr></thead><tbody><tr class="done">
+	<td>click</td>
+	<td>link=Private Chat</td>
+	<td></td>
+	<td>Element link=Private Chat not found</td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Directory</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=1111</td>
+	<td></td>
+	<td>Element link=1111 not found</td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>hello</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>asdwqejlasdjqwe</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//input[@type='submit']</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//hidden/button</td>
+	<td></td>
+	<td>Element //hidden/button not found</td>
+</tr>
+<tr class="passed">
+	<td>assertLocation</td>
+	<td>https://emergency-social-network.herokuapp.com/#/privateChat</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertTextNotPresent</td>
+	<td>david</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>assertTextNotPresent</td>
+	<td>hello</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Directory</td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+</body></html>

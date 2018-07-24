@@ -1,0 +1,44 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="ChatGroupCntl">
+    <div class="tab-container">
+        <div class="jumbotron">
+            <div class="bar">
+                <!--SearchString Bind -->
+                <input type="text" ng-model="searchText" placeholder="Search User or Group"/>
+            </div>
+
+            <h4 class="sub-header">Group List</h4>
+            <div class="scroll-table">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Group</th>
+                        <th>Description</th>
+                        <th>Users</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="group in groups | filter:searchText">
+                        <td ng-click="chatWith(group.groupname)"><a href="#groupchat">{{group.groupname}} <span
+                                style="color: red;">{{newmsg(group.groupname) ? "new message" : ""}}</span></a>
+                            <!--<span class="date" ng-show="user.status != 'undef'">{{user.status_timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>-->
+                        </td>
+                        <td>{{group.description}}</td>
+
+                        <td>{{group.users}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-footer chat-bottom-bar-announce">
+                    <div class="input-group-btn-announce">
+                        <a href="#groupcreate">
+                            <button type="button" class="btn btn-secondary btn-lg btn-block"> Create New Group</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

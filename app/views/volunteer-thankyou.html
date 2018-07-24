@@ -1,0 +1,53 @@
+<div ng-include="'views/tab-align.html'"></div>
+<style>
+
+</style>
+<div class="tab-container" ng-controller="volnCntl" ng-init="init()">
+    <h2>
+        Thankyou! <br>
+        Your response has been recorded, we will get in touch with you shortly.
+    </h2>
+
+    <div class="button-bottom">
+
+        <button type="button" class="btn btn-secondary btn-lg btn-block" ng-show="!showContri"
+                ng-click="showContri= true">Current Contributions Status
+        </button>
+
+    </div>
+
+
+    <div class="table-responsive-vol" ng-show="showContri">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Contributions :</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="choice in choices | filter:'!none'">
+                <!--<td ng-click="chatWith(user.username)"><a href="#privateChat">{{choice.username}} <span-->
+                <td ng-click="chatWith(user.username)">{{choice.username}} <span
+                        style="color: red;">{{newmsg(choice.username) ? "new message" : ""}}</span></a>
+                    <img src="../public/img/emergency.png" class="show-icon" ng-show="choice.status === 'emer'"/>
+                    <img src="../public/img/ok.png" class="show-icon" ng-show="choice.status === 'ok'"/>
+                    <img src="../public/img/help.png" class="show-icon" ng-show="choice.status === 'help'"/>
+                    <span class="date" ng-show="choice.status != 'undef'">{{choice.status_timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+                </td>
+                <td>{{choice.choice}}</td>
+                <!--=== 0 ? "0" : "1"}}</td>-->
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td>
+                    <button type="button" value="ok" ng-show="showContri" ng-click="showContri= false">Ok</button>
+                </td>
+                <td></td>
+            </tr>
+            </span>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

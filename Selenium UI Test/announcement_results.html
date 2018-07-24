@@ -1,0 +1,1764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+.failed {color: red; background-color: #ffcccc;}
+.passed {color: green; background-color: #ccffcc;}
+.done {color: #404040; background-color: #ccffcc;}
+.comment {color: #404040; background-color: #d0d0d0;}
+body, table { font-family: Verdana, Arial, sans-serif; font-size: 12pt; }
+table { border-collapse: collapse; border: 1px solid #ccc; }
+th, td { padding-left: 0.3em; padding-right: 0.3em; border: 1px solid #ccc; }
+#suiteSummaryTable thead { font-size: 14pt; font-weight: 800; }
+.test_case thead { font-size: 14pt; font-weight: 400; }
+</style>
+</head>
+<body>
+<table id="suiteSummaryTable" class="selenium">
+<thead><tr class="passed"><td>Test Suite: announcement</td></tr></thead>
+<tbody>
+<tr><td>Test cases: 8 total / <span class="passed">8</span> passed / <span class="failed">0</span> failed</td></tr>
+<tr><td>Commands: 170 total / <span class="passed">170</span> passed / <span class="failed">0</span> failed / <span class="skipped">0</span> skipped</td></tr>
+</tbody></table><br>
+<table id="suiteTable" class="selenium">
+<thead><tr><td>Index of test cases</td></tr></thead>
+<tbody>
+<tr class="done"><td><a href="#test0">No_Data_Present</a></td></tr>
+<tr class="passed"><td><a href="#test1">Single_Result</a></td></tr>
+<tr class="passed"><td><a href="#test2">Multiple_Result</a></td></tr>
+<tr class="done"><td><a href="#test3">No_Result</a></td></tr>
+<tr class="passed"><td><a href="#test4">User_Latest_Annoucement</a></td></tr>
+<tr class="passed"><td><a href="#test5">Case_Insensitive_Partial_Search</a></td></tr>
+<tr class="passed"><td><a href="#test6">Stop_Words</a></td></tr>
+<tr class="passed"><td><a href="#test7">more_than_10_results</a></td></tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test0"></a><table class="test_case"><thead><tr><td colspan="4">Test case: No_Data_Present</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.panel-body.msg-container-base</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test1"></a><table class="test_case"><thead><tr><td colspan="4">Test case: Single_Result</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>SearchText2</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyNotBodyText</td>
+	<td>glob:*SearchText1*SearchText1*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test2"></a><table class="test_case"><thead><tr><td colspan="4">Test case: Multiple_Result</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>SearchText2</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>Search</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*SearchText1*SearchText1*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test3"></a><table class="test_case"><thead><tr><td colspan="4">Test case: No_Result</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>SearchText3</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.panel-body.msg-container-base</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test4"></a><table class="test_case"><thead><tr><td colspan="4">Test case: User_Latest_Annoucement</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>MyText</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>SearchText1</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyNotBodyText</td>
+	<td>glob:*SearchText1*SearchText2*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>MyText</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test5"></a><table class="test_case"><thead><tr><td colspan="4">Test case: Case_Insensitive_Partial_Search</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>CaseInsensitivePartialTextSearch</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>INSENSITIVE</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyNotBodyText</td>
+	<td>glob:*SearchText1*SearchText2*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>CaseInsensitivePartialTextSearch</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test6"></a><table class="test_case"><thead><tr><td colspan="4">Test case: Stop_Words</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>almostfamous</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>almost</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyNotText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>almostfamous</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>almostfamous</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>storeText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>almostfamous</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+<br><hr><br><a name="test7"></a><table class="test_case"><thead><tr><td colspan="4">Test case: more_than_10_results</td></tr></thead><tbody><tr class="done">
+	<td>open</td>
+	<td>/#/</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=firstname</td>
+	<td>sk1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//div[@id='signup']/div/form/div[4]/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Announcements</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple1</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple2</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple3</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple4</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple5</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple6</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple7</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple8</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple9</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple10</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//textarea</td>
+	<td>Multiple11</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>type</td>
+	<td>//input[@type='text']</td>
+	<td>Multiple</td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>//hidden/button</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyNotBodyText</td>
+	<td>glob:*SearchText1*SearchText1*</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyText</td>
+	<td>css=div.chat-msg-author</td>
+	<td>glob:*Multiple*</td>
+	<td></td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple1*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple2*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple3*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple4*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple5*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple6*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple7*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple8*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple9*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple10*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="passed">
+	<td>verifyBodyText</td>
+	<td>glob:*Multiple11*</td>
+	<td></td>
+	<td>Actual value 'Toggle navigation Emergency Social Network 
+ Home Directory Public Chat Announcements Private Chat Logout 
+ 
+ 
+ 
+ 10 more 
+ sk1 : Multiple10
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple11
+ 4/6/2017, 8:29:59 AM 
+ 
+ 
+ 
+ sk1 : Multiple8
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple9
+ 4/6/2017, 8:29:58 AM 
+ 
+ 
+ 
+ sk1 : Multiple7
+ 4/6/2017, 8:29:57 AM 
+ 
+ 
+ 
+ sk1 : Multiple5
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple6
+ 4/6/2017, 8:29:56 AM 
+ 
+ 
+ 
+ sk1 : Multiple3
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple4
+ 4/6/2017, 8:29:55 AM 
+ 
+ 
+ 
+ sk1 : Multiple1
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ sk1 : Multiple2
+ 4/6/2017, 8:29:54 AM 
+ 
+ 
+ 
+ 
+ Post' did not match 'glob:*Multiple1*Multiple2*Multiple3*Multiple4*Multiple5*Multiple6*Multiple7*Multiple8*Multiple9*Multiple10*Multiple11*'</td>
+</tr>
+<tr class="done">
+	<td>click</td>
+	<td>link=Logout</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr class="done">
+	<td>close</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+
+</tbody></table>
+
+</body></html>

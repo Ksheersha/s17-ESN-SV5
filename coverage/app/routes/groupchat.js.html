@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\routes\groupchat.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/routes/</a> groupchat.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by 32842 on 4/17/2017.
+ */
+&nbsp;
+&nbsp;
+var express = require('express');
+var router = express.Router();
+var models_Users = require('../model/users');
+var User = models_Users.User;
+var cors = require('cors');
+var config = require('../config');
+var chatgroup = require('../model/chatgroup');
+var groupchat_message = require('../model/groupchat_messages');
+router.get('/list', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    chatgroup.list(<span class="fstat-no" title="function not covered" >function (doc) {</span></span>
+        // console.log(doc);
+<span class="cstat-no" title="statement not covered" >        res.statusCode=200;</span>
+<span class="cstat-no" title="statement not covered" >        res.send(doc);</span>
+    });
+});
+&nbsp;
+router.post('/', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    chatgroup.create(req,<span class="fstat-no" title="function not covered" >function (doc) {</span></span>
+        // console.log(doc);
+<span class="cstat-no" title="statement not covered" >        res.statusCode=doc;</span>
+<span class="cstat-no" title="statement not covered" >        res.send();</span>
+    });
+});
+&nbsp;
+&nbsp;
+router.post('/leave', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    console.log("leave");</span>
+<span class="cstat-no" title="statement not covered" >    chatgroup.leave(req,<span class="fstat-no" title="function not covered" >function (doc) {</span></span>
+        // console.log(doc);
+<span class="cstat-no" title="statement not covered" >        res.statusCode=doc;</span>
+<span class="cstat-no" title="statement not covered" >        res.send();</span>
+    });
+});
+&nbsp;
+&nbsp;
+router.post('/enter', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    console.log("enter");</span>
+<span class="cstat-no" title="statement not covered" >    chatgroup.enter(req,<span class="fstat-no" title="function not covered" >function (doc) {</span></span>
+        // console.log(doc);
+<span class="cstat-no" title="statement not covered" >        res.statusCode=doc;</span>
+<span class="cstat-no" title="statement not covered" >        res.send();</span>
+    });
+});
+&nbsp;
+router.post('/message', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    groupchat_message.Send(req,<span class="fstat-no" title="function not covered" >function(doc)</span></span>
+    {
+<span class="cstat-no" title="statement not covered" >        res.statusCode=doc;</span>
+<span class="cstat-no" title="statement not covered" >        res.send();</span>
+    });
+});
+&nbsp;
+router.get('/message/:groupname', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+    // console.log(req);
+<span class="cstat-no" title="statement not covered" >    groupchat_message.RetrieveMessages(req,<span class="fstat-no" title="function not covered" >function(status,doc)</span></span>
+    {
+        // console.log(status);
+<span class="cstat-no" title="statement not covered" >        res.statusCode=status;</span>
+<span class="cstat-no" title="statement not covered" >        res.send(doc);</span>
+    });
+});
+module.exports = router;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 20 2017 02:15:01 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

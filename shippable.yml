@@ -1,0 +1,53 @@
+# language setting
+language: node_js
+
+# version numbers
+node_js:
+    - 6.9.4
+
+before_install:
+# Activate the required node.js version. $SHIPPABLE_NODE_VERSION
+  - npm install -g grunt-cli mocha istanbul
+
+# 'npm install' is executed by default in Shippable - shown here for illustrative purposes
+install:
+  - npm install
+
+# The path for Xunit to output test reports
+env:
+  global:
+   - APP_NAME=emergency-social-network
+   - IS_SHIPPABLE=true
+   - HEROKU_API_KEY=4645cf5d-0288-41c3-815b-eb6530addbfe
+   - MOCHA_FILE=shippable/testresults/result.xml
+
+# Create directories for test and coverage reports
+before_script:
+      - mkdir -p shippable/testresults
+      - mkdir -p shippable/codecoverage
+
+# Running npm test to run your test cases
+script:
+  - which heroku || wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - grunt shippable
+  #- grunt coverage
+
+# Tell istanbul to generate a coverage report
+after_script:
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+   # - ./node_modules/.bin/istanbul cover grunt -- -u tdd
+   #Generate coverage report with istanbul
+   # - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --ui=tdd --reporter=MOCHA_FILE
+   # - ./node_modules/.bin/istanbul report cobertura --dir shippable/codecoverage/
+   # -./node_modules/.bin/istanbul cover _mocha -- tests/unit/ -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+# Pushing to production if everything passes
+#    - test -f ~/.ssh/id_rsa.heroku || ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.heroku && herok$
+after_success:
+    - git remote -v | grep ^heroku || heroku git:remote --ssh-git --app $APP_NAME
+    - git push heroku master --force
+    
+  #  - npm run coverage
+ # Notifications for each build
+notifications:
+   email: false

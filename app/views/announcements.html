@@ -1,0 +1,55 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="AnnouncementCntl">
+    <div class="jumbotron">
+        <div class="bar_announce">
+            <input type="text" ng-model="searchAnnounce" placeholder="Search Announcements"/>
+            <button class="btn btn-sm chat-submit-button" ng-model="numLimit" ng-click="numLimit = numLimit+10">View 10
+                more
+            </button>
+        </div>
+
+        <div class="table-responsive-announce">
+            <div class="panel-body msg-container-base" ng-style="vm.panelStyle">
+                <div class="row msg-container"
+                     ng-repeat="announcement in announcements|orderBy:'-timestamp'| filter:searchAnnounce | limitTo:numLimit">
+
+                    <div class="col-md-12 col-xs-12">
+                        <div class="chat-msg">
+                            <div class="chat-msg-author">
+                                <p><strong>{{announcement.username}} :&nbsp</strong></p>
+                                <p ng-if="announcement.isPicture !== true">{{announcement.content}}</p>
+                                <p ng-if="announcement.isPicture === true"><img ng-src="{{announcement.content}}"/>
+                                </p>
+                                <span class="date">{{announcement.timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer chat-bottom-bar" ng-if="mydata.privilege_level!='Citizen'">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm chat-input" placeholder="Type message here"
+                           ng-model="form.text"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-sm chat-submit-button"
+                                ng-click="submitPost(username,form.text,form.location)">Post</button>
+                    </span>
+                </div>
+            </div>
+            <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+                 class="cropArea" ng-hide="true">
+                <img-crop image="picFile | ngfDataUrl"
+                          result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square">
+                </img-crop>
+            </div>
+            <div ng-show="uploadingPicutre">
+                <img ng-src="{{croppedDataUrl}}"/>
+
+            </div>
+            <div ng-show="uploadingPicutre">
+                <button ng-click="upload(croppedDataUrl)">Submit</button>
+                <button ng-click="stopPicture()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

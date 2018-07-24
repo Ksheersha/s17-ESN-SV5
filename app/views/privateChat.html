@@ -1,0 +1,77 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="privateChatCntl">
+    <div class="jumbotron">
+        <div class="bar_announce">
+            <input type="text" ng-model="searchAnnounce" placeholder="Search Chat Messages"/>
+            <button class="btn btn-sm chat-submit-button" ng-model="numLimit" ng-click="numLimit = numLimit+10">View 10
+                more
+            </button>
+        </div>
+        <!--input type="file" nv-file-select="" uploader="uploader"/-->
+
+        <div class="table-responsive-chat">
+            <div class="panel">
+                <div class="panel-heading chat-top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title">{{chattitle}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body msg-container-base" ng-style="vm.panelStyle">
+                <div class="row msg-container"
+                     ng-repeat="message in messages|orderBy:'timestamp'| filter:searchAnnounce | limitTo:-numLimit">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="chat-msg">
+                            <div class="chat-msg-author"
+                                 ng-style="message.sendingUserName === sendingUserName ? sendstyle: receivestyle">
+                                <p>
+                                    <img src="../public/img/emergency.png" class="show-icon"
+                                         ng-show="message.status === 'emer'"/>
+                                    <img src="../public/img/ok.png" class="show-icon"
+                                         ng-show="message.status === 'ok'"/>
+                                    <img src="../public/img/help.png" class="show-icon"
+                                         ng-show="message.status === 'help'"/>
+                                    <strong>{{message.sendingUserName}} </strong>
+                                </p>
+                                <p ng-if="message.isPicture !== true">{{message.content}}</p>
+                                <p ng-if="message.isPicture === true"><img ng-src="{{message.content}}"/></p>
+                                <span class="date">{{message.timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer chat-bottom-bar" ng-hide="uploadingPicutre">
+            <div class="input-group">
+                <input type="text" class="form-control input-sm chat-input" placeholder="Type message here"
+                       ng-model="form.text"/>
+                <span class="input-group-btn">
+                    <input type="submit" class="btn btn-sm chat-submit-button"
+                           ng-click="submitPost(form.text,form.location)"/>
+                    <input type="image" ngf-select ng-model="picFile" accept="image/*" class="btn btn-sm chat-submit-button"
+                           value="" ng-click="startPicture()" img src="../public/img/camera.jpg"/>
+                </span>
+
+
+            </div>
+        </div>
+
+        <div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+             class="cropArea" ng-hide="true">
+            <img-crop image="picFile  | ngfDataUrl"
+                      result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="square">
+            </img-crop>
+        </div>
+        <br>
+        <div ng-show="uploadingPicutre">
+            <img ng-src="{{croppedDataUrl}}"/>
+
+        </div>
+        <div ng-show="uploadingPicutre">
+            <button ng-click="upload(croppedDataUrl)">Submit</button>
+            <button ng-click="stopPicture()">Cancel</button>
+        </div>
+
+    </div>
+</div>

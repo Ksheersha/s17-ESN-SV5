@@ -1,0 +1,71 @@
+<!--script src="services.js"></script-->
+
+<!--script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script-->
+<!-- </head> -->
+<div class="center" ng-controller="RegisterCtrl">
+    <div class="container">
+        <div id="signup">
+            <div class="signup-screen">
+                <div class="space-bot text-center">
+                    <h1>Emergency Social Network</h1>
+                    <!--<h2 ng-hide="status === 202">Join Community</h2>-->
+                    <!--<h2 ng-if="status === 202">Sign Up</h2>-->
+                    <div class="divider"></div>
+                </div>
+                <form class="form-register" method="post" name="register" novalidate ng-model="userForm">
+                    <div class="input-field col s6">
+                        <input id="firstname" name="firstname" type="text" class="validate"  ng-model="username"  ng-minlength='3' 
+                               placeholder="Enter Name" required>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="password" type="password" name="password" ng-model="password" ng-minlength='4'
+                               class="validate" placeholder="Enter Password" required>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="email" type="email" name="email" ng-if="status === 202" ng-model="email"
+                               ng-minlength='3' class="validate" placeholder="Enter email" required>
+                    </div>
+                    <p class="error" ng-show="form-register.password.$error.minlength">Your password must be at least 4
+                        characters</p>
+                    <p class="error" ng-show="form-register.email.$error.email">Invalid email. Format -
+                        example@example</p>
+                    <div class="error" ng-if="status === 200">
+                        <p>User Already Exists</p>
+                    </div>
+                    <div class="error" ng-if="status === 201 && event != 'signup'">
+                        <p>Password Mismatch</p>
+                    </div>
+                      <p class="error" ng-if="form-register.firstname.$error.minlength && status === 202" >Your name must be at least 3
+                              characters</p>
+                    <div class="error" ng-if="status === 202">
+                        <p>You are a new user. Please SignUp </p>
+                    </div>
+                    <div class="error" ng-if="status === 403">
+                        <p>You are already logged in another session. <br>Please logout and try again </p>
+                    </div>
+                    <div class="error" ng-if="status === 405">
+                        <p>Your account is inactive. </p>
+                    </div>
+
+                    <div class="space-top text-center">
+                        <button ng-if="status === 202"
+                                ng-disabled="form-register.password.$error.minlength||form-register.email.$error.email"
+                                class="waves-effect waves-light btn done" ng-click="directRegister(username,password)">
+                            <i class="material-icons left"></i>Sign Up
+                        </button>
+                        <button ng-hide="status === 202" ng-disabled="form-register.password.$error.minlength"
+                                ng-click="directMain(username,password)" class="waves-effect waves-light btn done">
+                            <i class="material-icons left"></i> Join Community
+                        </button>
+
+                        <button ng-click="clear()" class="waves-effect waves-light btn cancel">
+                            <i class="material-icons left"></i>Clear
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+<!-- <ng-view></ng-view> -->

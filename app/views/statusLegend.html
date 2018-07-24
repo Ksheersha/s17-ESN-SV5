@@ -1,0 +1,69 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="statusCntl" ng-init="init()">
+    <div class="jumbotron">
+        <!--div ng-repeat="users in user-list"-->
+        <!--div class="col-md-6"-->
+        <h2 align="center">Welcome {{userName}}
+            <span ng-repeat='status in status track by $index'>
+            <img src="../public/img/emergency.png" class="show-icon" ng-show="status.status === 'emer'"/>
+            <img src="../public/img/ok.png" class="show-icon" ng-show="status.status === 'ok'"/>
+            <img src="../public/img/help.png" class="show-icon" ng-show="status.status === 'help'"/>
+            <span class="date" ng-show="status.status != 'undef'">{{status.status_timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+        </span>
+        </h2>
+        <p class="message"><i>Emergency Social Network(ESN) provide civilians with a social network that they can use
+            during emergency situations. The system is different from other existing social networks because it is
+            specifically designed to effectively support small communities of civilians seriously affected in case of
+            natural disasters like earthquake, tsunami, tornado, wildfire, etc.
+        </i></p>
+
+        <h4 class="sub-header-share">Share your status</h4>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Status</th>
+                    <th>Explanation</th>
+                    <th>Icon</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="radio" value="ok" ng-model="statusSelect" ng-change='newStatus(statusSelect)'></td>
+                    <td>OK</td>
+                    <td>I am OK, I do not need help.</td>
+                    <td><img src="../public/img/ok.png" class="ok-thumbnail"></td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="help" ng-model="statusSelect" ng-change='newStatus(statusSelect)'>
+                    </td>
+                    <td>Help</td>
+                    <td>I need help, but this is not a life threatening emergency.</td>
+                    <td><img src="../public/img/help.png" class="help-thumbnail"></td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="emer" ng-model="statusSelect" ng-change='newStatus(statusSelect)'>
+                    </td>
+                    <td>Emergency</td>
+                    <td>I need help now, as this is a life threatening emergency!</td>
+                    <td><img src="../public/img/emergency.png" class="emer-thumbnail"></td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="undef" ng-model="statusSelect" ng-change='newStatus(statusSelect)'>
+                    </td>
+                    <td>Undefined</td>
+                    <td>The user has not been providing her status yet.</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4><a href="#volunteer">How can I help?</a></h4>
+    </div>
+</div>
+<!-- <div ng-view></div> -->

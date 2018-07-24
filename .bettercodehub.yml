@@ -1,0 +1,8 @@
+languages:
+- javascript
+
+exclude:
+- /UI_test_file/volunteer.java
+- /coverage/.*
+- /karma.conf.js
+- /app/config.js

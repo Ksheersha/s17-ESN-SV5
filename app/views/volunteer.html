@@ -1,0 +1,116 @@
+<div ng-include="'views/tab-align.html'"></div>
+<style>
+
+</style>
+<div class="tab-container" ng-controller="volnCntl" ng-init="init()">
+    <div class="buttons">
+        <div class="button-center">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" ng-show="!showMe" ng-click="showMe= true">
+                How would you like to contribute?
+            </button>
+            <!--<button type="button" class="btn btn-secondary btn-lg btn-block" ng-show="showMe" ng-click="showMe= false">Hide options-->
+            <!--</button>-->
+        </div>
+
+        <div class="button-bottom">
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" ng-show="!showContri"
+                    ng-click="showContri= true">Current Contributions Status
+            </button>
+            <!--<button type="button" class="btn btn-secondary btn-lg btn-block" ng-show="showContri" ng-click="showContri= false">Hide options-->
+            <!--</button>-->
+        </div>
+
+        <div class="table-responsive-vol" ng-show="showMe">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="radio" value="Food" ng-model="choiceSelect"></td>
+                    <td>I can help with food</td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Medicines" ng-model="choiceSelect"></td>
+                    <td>I can help with medicines</td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Money" ng-model="choiceSelect"></td>
+                    <td>I can provide monetory help</td>
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Accomodation" ng-model="choiceSelect"></td>
+                    <td>I can arrange accomodation</td>
+
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Tranportation" ng-model="choiceSelect"></td>
+                    <td>I can arrange transportation</td>
+
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Volunteering Time" ng-model="choiceSelect"></td>
+                    <td>I can volunteer my time</td>
+
+                </tr>
+                <tr>
+
+                    <td><input type="radio" value="Others" ng-model="choiceSelect"></td>
+                    <td>Others</td>
+
+                </tr>
+                <td>
+                    <button type="submit" value="submit" ng-click="submitPost(username,choiceSelect)">Submit</button>
+                </td>
+                <!--<button class="btn btn-primary">Save</button></td>-->
+                <td>
+                    <button type="cancel" value="cancel" ng-show="showMe" ng-click="showMe= false">Cancel</button>
+                </td>
+                <!--<button class="btn btn-primary">Cancel</button></td>-->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-vol" ng-show="showContri">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <!--<th></th>-->
+                    <th>Contributions :</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="choice in choices | filter:'!none'">
+                    <!--<td ng-click="chatWith(user.username)"><a href="#privateChat">{{choice.username}} <span-->
+                    <td ng-click="chatWith(user.username)">{{choice.username}} <span
+                            style="color: red;">{{newmsg(choice.username) ? "new message" : ""}}</span></a>
+                        <img src="../public/img/emergency.png" class="show-icon" ng-show="choice.status === 'emer'"/>
+                        <img src="../public/img/ok.png" class="show-icon" ng-show="choice.status === 'ok'"/>
+                        <img src="../public/img/help.png" class="show-icon" ng-show="choice.status === 'help'"/>
+                        <span class="date" ng-show="choice.status != 'undef'">{{choice.status_timestamp | date: "MM/dd/yyyy,hh:mm:ss a"}}</span>
+                    </td>
+                    <td>{{choice.choice}}</td>
+                    <!--=== 0 ? "0" : "1"}}</td>-->
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        <button type="button" value="ok" ng-show="showContri" ng-click="showContri= false">Ok</button>
+                    </td>
+                    <td></td>
+                </tr>
+                </span>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

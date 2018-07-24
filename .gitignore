@@ -1,0 +1,10 @@
+node_modules/*
+FSEProj/node_modules/*
+FSEProj/app/node_modules/*
+bower_components/*
+FSEProj/bower_components/*
+FSEProj/app/bower_components/*
+*.log
+*.log.*
+.idea/*
+~$*

@@ -1,0 +1,69 @@
+<div ng-include="'views/tab-align.html'"></div>
+<div class="tab-container" ng-controller="helpCntl">
+    <div class="jumbotron">
+        <div class="bar_announce">
+            <button class="btn btn-secondary btn-lg" style="margin-left:7%" ng-model="registerHelp"
+                    ng-init="registerForm=false" ng-click="registerForm=true; findHelpForm=false">Register as a Help
+                Provider</a></button>
+            <br/>
+            <br/>
+            <button class="btn btn-secondary btn-lg" style="margin:0 0 5% 23%" ng-init="findHelpForm=false"
+                    ng-click="getHelpProviders();findHelpForm=true; registerForm=false; clear();">Find Help
+            </button>
+            <div class="form-group" ng-show="registerForm">
+                <div class="col-xs-6">
+                    <textarea class="form-control" rows="1" ng-model="name" placeholder="Name/UserID"
+                              required="string"></textarea><br/>
+                    <textarea class="form-control" rows="2" columns="5" wrap="hard" ng-model="address"
+                              placeholder="Address"></textarea><br/>
+                    <select name="helpSelected" class="form-control" id="helpSelected" ng-model="helpSelected">
+                        <option value="" disabled selected>Type of Help</option>
+                        <option ng-repeat="help in helpOptions" value="{{help}}">
+                            {{help}}
+                        </option>
+
+                    </select><br/>
+                    <textarea class="form-control" ng-model="comments" placeholder="Comments"></textarea><br/>
+
+                    <button type="button" class="btn btn-sm chat-submit-button"
+                            ng-click="saveHelp(name,address,helpSelected,comments)">Save
+                    </button>
+                    <button type="button" class="btn btn-sm chat-submit-button"
+                            ng-click="clear()">Clear
+                    </button>
+                    <br/>
+                    <text ng-if="success === 'true'">Registation Successful</text>
+                    <text ng-if="success === 'false'">Registration Unsuccessful. All fields are required.</text>
+                </div>
+            </div>
+            <div ng-show="findHelpForm">
+                <div class="bar">
+                    <!--SearchString Bind -->
+                    <input type="text" ng-model="searchText" placeholder="Search help"/>
+                </div>
+                <!--div class="table-responsive"-->
+                <table class="table-striped" style="table-layout: fixed;width:75%;word-wrap: break-word;">
+                    <thead>
+                    <tr>
+                        <th>Name/<br/>UserID</th>
+                        <th>Address</th>
+                        <th style="white-space: normal;">Help Provided</th>
+                        <th style="white-space: normal;text-align:center">Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="provider in helpProviders | filter:searchText">
+                        <td style="white-space: normal">{{provider.username}}</td>
+                        <td style="white-space: normal">{{provider.Address}}</td>
+                        <td style="white-space: normal">{{provider.HelpType}}</td>
+                        <td style="white-space: normal;text-align:center">{{provider.Comments}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <!--/div-->
+            </div>
+
+        </div>
+
+    </div>
